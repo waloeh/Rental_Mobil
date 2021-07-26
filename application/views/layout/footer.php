@@ -44,22 +44,24 @@
 <script src="<?php echo base_url(); ?>assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url(); ?>assets/plugins/fastclick/fastclick.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap4.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
-
-
 <script src="<?php echo base_url(); ?>assets/dist/js/pages/dashboard3.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
-<script src="<?php echo base_url(); ?>assets/plugins/datatables/dataTables.bootstrap4.js"></script>
-
+<script src="<?php echo base_url(); ?>assets/dist/js/rentalmobil.js"></script>
 <script>
-  $(document).ready(function() {
-    $('#data-kendaraan').DataTable();
-  });
+  $(function() {
+    $('#data-driver').DataTable()
+    $('#data-user').DataTable()
+    $('#data-kendaraan').DataTable()
+    $('#data-transaksi').DataTable()
+  })
 </script>
 </body>
 

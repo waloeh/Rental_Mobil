@@ -5,7 +5,7 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['tittle'] = "Dashboard";
-        $data['dataUser'] = $this->M_user->getDataUserAll();
+        $data['dataUser'] = $this->M_user->getUserAll();
         $this->load->view('layout/header');
         $this->load->view('layout/sidebar');
         $this->load->view('dashboard/v_dashboard', $data);

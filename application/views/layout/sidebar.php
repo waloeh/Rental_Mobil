@@ -26,10 +26,10 @@
            </a>
          </li>
          <li class="nav-item">
-           <a href="#" class="nav-link">
+           <a href="<?= base_url('Transaksi') ?>" class="nav-link">
              <i class="nav-icon fas fa-th"></i>
              <p>
-               Pesanan Baru
+               Data Transaksi
                <!-- <span class="right badge badge-danger">New</span> -->
              </p>
            </a>
@@ -44,7 +44,7 @@
            </a>
          </li>
          <li class="nav-item">
-           <a href="#" class="nav-link">
+           <a href="<?php echo base_url('driver') ?>" class="nav-link">
              <i class="nav-icon fas fa-chart-pie"></i>
              <p>
                Data Driver
@@ -52,7 +52,7 @@
            </a>
          </li>
          <li class="nav-item">
-           <a href="#" class="nav-link">
+           <a href="<?php echo base_url('user') ?>" class="nav-link">
              <i class="nav-icon fas fa-tree"></i>
              <p>
                Data User
@@ -63,9 +63,24 @@
            <a href="#" class="nav-link">
              <i class="nav-icon fas fa-edit"></i>
              <p>
-               Laporan
+               Laporan Keuangan
+               <i class="fas fa-angle-left right"></i>
              </p>
            </a>
+           <ul class="nav nav-treeview">
+             <li class="nav-item">
+               <a href="<?= base_url('laporan/pemasukan') ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Pemasukan</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="#" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Pengeluaran</p>
+               </a>
+             </li>
+           </ul>
          </li>
          <li class="nav-item">
            <a href="#" class="nav-link">
