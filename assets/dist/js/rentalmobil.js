@@ -120,7 +120,7 @@ $(document).ready(function () {
             URL +
             "Detail/" +
             response.data[i].id_driver +
-            '"><button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></button></i></a> <a href="' +
+            '"><button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-info"></button></i></a> <a href="' +
             URL +
             "Hapus/" +
             response.data[i].id_driver +
