@@ -22,21 +22,21 @@
             </button>
         </div>
         <div class="card-body" style="min-height: 480px !important;">
-            <table id="data-kendaraan" class="table table-bordered table-sm table-hover" style="width: 100%; margin-top: 0 !important;">
+            <table id="data-kendaraan" class="table table-bordered table-sm  table-hover" style="width: 100%; margin-top: 0 !important;">
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama</th>
+                        <th width="100">Nama</th>
                         <th>Jenis</th>
                         <th>Status</th>
                         <th>No. Polisi</th>
                         <th>Harga Sewa</th>
                         <th>Tahun Buat</th>
-                        <th>Tanggal Pajak</th>
+                        <th width="80">Tanggal Pajak</th>
                         <th>Ganti Oli</th>
                         <th>Tanggal Service</th>
                         <th>Ganti Ban</th>
-                        <th>Opsi</th>
+                        <th width="100">Opsi</th>
                     </tr>
                 </thead>
                 <tbody id="show-data-kendaraan"></tbody>
