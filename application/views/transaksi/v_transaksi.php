@@ -33,7 +33,7 @@
                         <th>Tgl Kembali</th>
                         <th>Keperluan</th>
                         <th>Harga Sewa</th>
-                        <th>Opsi</th>
+                        <th width="100">Opsi</th>
                     </tr>
                 </thead>
                 <tbody id="show-data-transaksi"></tbody>
