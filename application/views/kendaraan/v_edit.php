@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select type="text" class="form-control" id="status" name="status">
-                                <option value="<?= $dataKendaraan['status'] ?>"><?= $dataKendaraan['status'] ?></option>
+                                <option value="<?= $dataKendaraan['status_kendaraan'] ?>"><?= $dataKendaraan['status_kendaraan'] ?></option>
                                 <option value="siap">Siap</option>
                                 <option value="jalan">Jalan</option>
                                 <option value="service">Service</option>
@@ -62,6 +62,11 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sheet">Jumlah sheet</label>
+                            <input type="text" class="form-control" id="sheet" value="<?= $dataKendaraan['sheet'] ?>" name="sheet">
+                            <?= form_error('sheet', '<small class="text-danger">', '</small>') ?>
+                        </div>
                         <div class="form-group">
                             <label for="ganti_oli">Tanggal Ganti Oli</label>
                             <input type="date" class="form-control" id="ganti_oli" value="<?= $dataKendaraan['tgl_ganti_oli'] ?>" name="ganti_oli">

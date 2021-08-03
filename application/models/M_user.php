@@ -21,4 +21,15 @@ class M_user extends CI_Model
         $result = $this->db->affected_rows();
         return $result;
     }
+
+    public function jmlUser()
+    {
+        return $this->db->get('user')->num_rows();
+    }
+
+    public function cekUser($username)
+    {
+        $this->db->where('username', $username);
+        return $this->db->get('user')->row_array();
+    }
 }

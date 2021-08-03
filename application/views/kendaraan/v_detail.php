@@ -53,6 +53,10 @@
                                         <th><?php echo $dataKendaraan['no_polisi'] ?></th>
                                     </tr>
                                     <tr>
+                                        <th>Jumlah sheet : </th>
+                                        <th><?php echo $dataKendaraan['sheet'] ?></th>
+                                    </tr>
+                                    <tr>
                                         <th>Tahun Pembuatan : </th>
                                         <th><?php echo $dataKendaraan['tahun_pembuatan'] ?></th>
                                     </tr>
@@ -66,12 +70,12 @@
                                     </tr>
                                     <tr>
                                         <th>Status : </th>
-                                        <?php if ($dataKendaraan['status'] == "siap") { ?>
-                                            <th><button class="badge badge-pill badge-success"><b><?php echo $dataKendaraan['status'] ?></b></button></th>
-                                        <?php } else if ($dataKendaraan['status'] == "jalan") { ?>
-                                            <th><button class="badge badge-pill badge-warning "><b><?php echo $dataKendaraan['status'] ?></b></button></th>
+                                        <?php if ($dataKendaraan['status_kendaraan'] == "siap") { ?>
+                                            <th><button class="badge badge-pill badge-success"><b><?php echo $dataKendaraan['status_kendaraan'] ?></b></button></th>
+                                        <?php } else if ($dataKendaraan['status_kendaraan'] == "jalan") { ?>
+                                            <th><button class="badge badge-pill badge-warning "><b><?php echo $dataKendaraan['status_kendaraan'] ?></b></button></th>
                                         <?php } else { ?>
-                                            <th><button class="badge badge-pill badge-danger"><b><?php echo $dataKendaraan['status'] ?></b></button></th>
+                                            <th><button class="badge badge-pill badge-danger"><b><?php echo $dataKendaraan['status_kendaraan'] ?></b></button></th>
                                         <?php } ?>
 
                                     </tr>

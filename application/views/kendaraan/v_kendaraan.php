@@ -21,20 +21,21 @@
                 <i class="fa fa-sync-alt"></i>
             </button>
         </div>
+        <div class="flash-data-kendaraan" data-flash="<?php echo $this->session->flashdata('flash') ?>"></div>
         <div class="card-body" style="min-height: 480px !important;">
-            <table id="data-kendaraan" class="table table-bordered table-sm table-hover" style="width: 100%; margin-top: 0 !important;">
+            <table id="data-kendaraan" class="table table-bordered table-sm table-hover table-responsive">
                 <thead>
-                    <tr>
+                    <tr class=" text-center">
                         <th>No</th>
-                        <th>Nama</th>
+                        <th style="width: 80px;">Nama</th>
                         <th>Jenis</th>
                         <th>Status</th>
                         <th>No. Polisi</th>
                         <th>Harga Sewa</th>
                         <th>Tahun Buat</th>
-                        <th>Tanggal Pajak</th>
+                        <th>Tgl Pajak</th>
                         <th>Ganti Oli</th>
-                        <th>Tanggal Service</th>
+                        <th>Tgl Service</th>
                         <th>Ganti Ban</th>
                         <th>Opsi</th>
                     </tr>

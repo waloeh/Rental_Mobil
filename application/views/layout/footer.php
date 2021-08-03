@@ -54,6 +54,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 <script src="<?php echo base_url(); ?>assets/dist/js/pages/dashboard3.js"></script>
+<script src="<?php echo base_url(); ?>assets/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/dist/js/rentalmobil.js"></script>
 <script>
   $(function() {
@@ -61,6 +62,10 @@
     $('#data-user').DataTable()
     $('#data-kendaraan').DataTable()
     $('#data-transaksi').DataTable()
+    $('#data-pemasukan').DataTable()
+    $('#data-pengeluaran').DataTable()
+    $('#data-jadwal').DataTable()
+    $('#data-komisi').DataTable()
   })
 </script>
 </body>

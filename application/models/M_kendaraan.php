@@ -23,7 +23,12 @@ class M_kendaraan extends CI_Model
 
     public function kendaraanFree()
     {
-        $this->db->where('status', 'siap');
+        $this->db->where('status_kendaraan', 'siap');
         return $this->db->get('kendaraan')->result_array();
+    }
+
+    public function jmlKendaraan()
+    {
+        return $this->db->get('user')->num_rows();
     }
 }

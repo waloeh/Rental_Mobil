@@ -53,13 +53,13 @@ class Driver extends CI_Controller
             $this->db->insert('driver', array(
                 'nama_driver' => trim(htmlspecialchars($this->input->post('nama'))),
                 'jenis_kelamin' => trim(htmlspecialchars($this->input->post('kelamin'))),
-                'alamat' => trim(htmlspecialchars($this->input->post('alamat'))),
+                'alamat_driver' => trim(htmlspecialchars($this->input->post('alamat'))),
                 'email' => trim(htmlspecialchars($this->input->post('email'))),
                 'no_hp' => trim(htmlspecialchars($this->input->post('hp'))),
-                'status' => 1,
-                'gambar' => $gambar
+                'status_driver' => 1,
+                'gambar_driver' => $gambar
             ));
-            $this->toastr->success('Berhasil');
+            $this->session->set_flashdata('flash', 'ditambah');
             redirect('driver');
         }
     }
@@ -79,7 +79,7 @@ class Driver extends CI_Controller
             $this->load->view('driver/v_edit', $data);
             $this->load->view('layout/footer');
         } else {
-            $gambarLama = $data['dataDriver']['gambar'];
+            $gambarLama = $data['dataDriver']['gambar_driver'];
             $gambarBaru = $_FILES['gambar']['name'];
             if ($gambarBaru) {
                 $config['max_size'] = 2048;
@@ -97,16 +97,16 @@ class Driver extends CI_Controller
             }
             $data = array(
                 'nama_driver' => trim(htmlspecialchars($this->input->post('nama'))),
-                'alamat' => trim(htmlspecialchars($this->input->post('alamat'))),
+                'alamat_driver' => trim(htmlspecialchars($this->input->post('alamat'))),
                 'jenis_kelamin' => trim(htmlspecialchars($this->input->post('kelamin'))),
                 'email' => trim(htmlspecialchars($this->input->post('email'))),
                 'no_hp' => trim(htmlspecialchars($this->input->post('no_hp'))),
-                'status' => trim(htmlspecialchars($this->input->post('status'))),
-                'gambar' => $gambar
+                'status_driver' => trim(htmlspecialchars($this->input->post('status'))),
+                'gambar_driver' => $gambar
             );
             $this->db->where('id_driver', $id);
             $this->db->update('driver', $data);
-            //toastr
+            $this->session->set_flashdata('flash', 'diubah');
             redirect('driver');
         }
     }
@@ -125,6 +125,7 @@ class Driver extends CI_Controller
     {
         $this->db->where('id_driver', $id);
         $this->db->delete('driver');
+        $this->session->set_flashdata('flash', 'dihapus');
         redirect('driver');
     }
 }

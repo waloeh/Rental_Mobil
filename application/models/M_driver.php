@@ -16,7 +16,12 @@ class M_driver extends CI_Model
 
     public function driverFree()
     {
-        $this->db->where('status', 1);
+        $this->db->where('status_driver', 1);
         return $this->db->get('driver')->result_array();
+    }
+
+    public function jmlDriver()
+    {
+        return $this->db->get('user')->num_rows();
     }
 }

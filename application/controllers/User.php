@@ -48,6 +48,7 @@ class User extends CI_Controller
             'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'gambar' => $gambar
         ));
+        $this->session->set_flashdata('flash', 'ditambah');
         redirect('User');
     }
 
@@ -69,7 +70,7 @@ class User extends CI_Controller
             $this->load->view('user/v_edit', $data);
             $this->load->view('layout/footer');
         } else {
-            $gambarLama = $data['dataUserById']['gmabar'];
+            $gambarLama = $data['dataUserById']['gambar'];
             $gambarBaru = $_FILES['gambar']['name'];
             if ($gambarBaru) {
                 // $config['max_size'] = 2048;
@@ -103,7 +104,7 @@ class User extends CI_Controller
             );
             $this->db->where('id_user', $id);
             $this->db->update('user', $data);
-            //toastrs
+            $this->session->set_flashdata('flash', 'diubah');
             redirect('user');
         }
     }
@@ -124,9 +125,10 @@ class User extends CI_Controller
         $result = $this->M_user->delete($id);
         if ($result > 0) {
             unlink(FCPATH . '/assets/images/users/' . $dataUser['gambar']);
+            $this->session->set_flashdata('flash', 'dihapus');
             redirect('user');
         } else {
-            //gagal dihapus
+            $this->session->set_flashdata('flash', 'dihapus');
             redirect('user');
         }
     }

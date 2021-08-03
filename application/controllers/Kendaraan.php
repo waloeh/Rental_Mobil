@@ -59,16 +59,17 @@ class Kendaraan extends CI_Controller
                 'nama_kendaraan' => trim(htmlspecialchars($this->input->post('nama'))),
                 'jenis_kendaraan' => trim(htmlspecialchars($this->input->post('jenis'))),
                 'no_polisi' => trim(htmlspecialchars($this->input->post('no_polisi'))),
+                'sheet' => trim(htmlspecialchars($this->input->post('sheet'))),
                 'harga_sewa' => trim(htmlspecialchars($this->input->post('harga_sewa'))),
                 'tahun_pembuatan' => trim(htmlspecialchars($this->input->post('tahun_pembuatan'))),
                 'tgl_ganti_oli' => trim(htmlspecialchars($this->input->post('ganti_oli'))),
                 'tgl_ganti_ban' => trim(htmlspecialchars($this->input->post('ganti_ban'))),
                 'tgl_service' => trim(htmlspecialchars($this->input->post('tanggal_service'))),
                 'tgl_bayar_pajak' => trim(htmlspecialchars($this->input->post('pajak'))),
-                'status' => 'siap',
+                'status_kendaraan' => 'siap',
                 'gambar' => $gambar
             ));
-            $this->toastr->success('Berhasil');
+            $this->session->set_flashdata('flash', 'ditambah');
             redirect('Kendaraan');
         }
     }
@@ -111,6 +112,7 @@ class Kendaraan extends CI_Controller
             $data = array(
                 'nama_kendaraan' => trim(htmlspecialchars($this->input->post('nama'))),
                 'jenis_kendaraan' => trim(htmlspecialchars($this->input->post('jenis'))),
+                'sheet' => trim(htmlspecialchars($this->input->post('sheet'))),
                 'no_polisi' => trim(htmlspecialchars($this->input->post('no_polisi'))),
                 'harga_sewa' => trim(htmlspecialchars($this->input->post('harga_sewa'))),
                 'tahun_pembuatan' => trim(htmlspecialchars($this->input->post('tahun_pembuatan'))),
@@ -118,15 +120,15 @@ class Kendaraan extends CI_Controller
                 'tgl_ganti_ban' => trim(htmlspecialchars($this->input->post('ganti_ban'))),
                 'tgl_service' => trim(htmlspecialchars($this->input->post('tanggal_service'))),
                 'tgl_bayar_pajak' => trim(htmlspecialchars($this->input->post('pajak'))),
-                'status' => trim(htmlspecialchars($this->input->post('status'))),
+                'status_kendaraan' => trim(htmlspecialchars($this->input->post('status'))),
                 'gambar' => $gambar
             );
             $result = $this->M_kendaraan->editKendaraan($id, $data);
             if ($result > 0) {
-                //toast berhasil
+                $this->session->set_flashdata('flash', 'diubah');
                 redirect('kendaraan');
             } else {
-                //toast gagal
+                $this->session->set_flashdata('flash', 'diubah');
                 redirect('kendaraan');
             }
         }
@@ -146,6 +148,7 @@ class Kendaraan extends CI_Controller
     {
         $this->db->where('id_kendaraan', $id);
         $this->db->delete('kendaraan');
+        $this->session->set_flashdata('flash', 'dihapus');
         redirect('kendaraan');
     }
 }

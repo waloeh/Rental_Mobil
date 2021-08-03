@@ -5,10 +5,10 @@
      <!-- Sidebar user panel (optional) -->
      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
        <div class="image">
-         <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+         <img src="<?php echo base_url('assets/images/users/') . $this->session->userdata('gambar'); ?>" class="img-circle elevation-2" alt="User Image">
        </div>
        <div class="info">
-         <a href="#" class="d-block">Admin</a>
+         <a href="#" class="d-block"><?php echo $this->session->userdata('username') ?></a>
        </div>
      </div>
      <!-- Sidebar Menu -->
@@ -53,7 +53,7 @@
          </li>
          <li class="nav-item">
            <a href="<?php echo base_url('user') ?>" class="nav-link">
-             <i class="nav-icon fas fa-tree"></i>
+             <i class="nav-icon fas fa-user"></i>
              <p>
                Data User
              </p>
@@ -75,9 +75,21 @@
                </a>
              </li>
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="<?php echo base_url('laporan/pengeluaran') ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
                  <p>Pengeluaran</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?php echo base_url('laporan/uangjalan') ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Komisi uang jalan</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?php echo base_url('laporan/jadwal') ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Jadwal Berangkat</p>
                </a>
              </li>
            </ul>
@@ -92,13 +104,13 @@
            </a>
            <ul class="nav nav-treeview">
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="<?php echo base_url('User/edit/' . $this->session->userdata('id_user')) ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
                  <p>Edit Profile</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="#" class="nav-link">
+               <a href="<?php echo base_url('Auth/logout') ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
                  <p>Logout</p>
                </a>

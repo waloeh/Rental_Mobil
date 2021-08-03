@@ -41,14 +41,14 @@
                             <?= form_error('no_polisi', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
+                            <label for="sheet">Jumlah sheet</label>
+                            <input type="text" class="form-control" id="sheet" placeholder="Jumlah sheet" name="sheet">
+                            <?= form_error('sheet', '<small class="text-danger">', '</small>') ?>
+                        </div>
+                        <div class="form-group">
                             <label for="harga_sewa">Harga Sewa / Hari</label>
                             <input type="text" class="form-control" id="harga_sewa" placeholder="Harga Sewa" name="harga_sewa">
                             <?= form_error('harga_sewa', '<small class="text-danger">', '</small>') ?>
-                        </div>
-                        <div class="form-group">
-                            <label for="tahun_pembuatan">Tahun Pembuatan</label>
-                            <input type="date" class="form-control" id="tahun_pembuatan" placeholder="Tahun Pembuatan" name="tahun_pembuatan">
-                            <?= form_error('tahun_pembuatan', '<small class="text-danger">', '</small>') ?>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -73,6 +73,15 @@
                             <?= form_error('pajak', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
+                            <label for="tahun_pembuatan">Tahun Pembuatan</label>
+                            <input type="date" class="form-control" id="tahun_pembuatan" placeholder="Tahun Pembuatan" name="tahun_pembuatan">
+                            <?= form_error('tahun_pembuatan', '<small class="text-danger">', '</small>') ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="form-group">
                             <label for="poto">Poto</label>
                             <div class="input-group">
                                 <div class="custom-file">

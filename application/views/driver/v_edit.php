@@ -26,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <input type="text" name="alamat" class="form-control" value="<?= $dataDriver['alamat'] ?>">
+                            <input type="text" name="alamat" class="form-control" value="<?= $dataDriver['alamat_driver'] ?>">
                             <?= form_error('alamat', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">
@@ -42,7 +42,7 @@
                             <label for="status">Status</label>
                             <select name="status" id="status" class="form-control" value>
                                 <?php
-                                if ($dataDriver['status']  == 1) { ?>
+                                if ($dataDriver['status_driver']  == 1) { ?>
                                     <option value="1">Siap</option>
                                 <?php } else { ?>
                                     <option value="2">Jalan</option>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Poto</label>
-                            <input type="file" name="gambar" class="form-control" value="<?= $dataDriver['gambar'] ?>">
+                            <input type="file" name="gambar" class="form-control" value="<?= $dataDriver['gambar_driver'] ?>">
                             <?= form_error('gambar', '<small class="text-danger">', '</small>') ?>
                         </div>
                     </div>

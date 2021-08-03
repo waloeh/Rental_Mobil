@@ -28,13 +28,13 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?php echo $dataTransaksi; ?></h3>
                   <h4>Data Pesanan</h4>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url('transaksi') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -42,14 +42,13 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-
+                  <h3><?php echo $dataDriver; ?><sup style="font-size: 20px"></sup></h3>
                   <h4>Data Driver</h4>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url('driver') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -57,13 +56,13 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>44</h3>
-                  <h4>Data kendaraan</h4>
+                  <h3><?php echo $dataKendaraan; ?></h3>
+                  <h4>Kendaraan</h4>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url('kendaraan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -71,21 +70,97 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3><?php echo $dataUser; ?></h3>
                   <h4>Data user</h4>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url('user') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
           </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="small-box bg-gray">
+                <div class="inner">
+                  <h3><?php echo 'Rp. ' . number_format($pemasukan, 0, ',', '.') ?></h3>
+                  <h4>Pemasukan</h4>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="<?php echo base_url('laporan/pemasukan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="small-box bg-gray">
+                <div class="inner">
+                  <h3><?php echo 'Rp. ' . number_format($pengeluaran, 0, ',', '.') ?></h3>
+                  <h4>Pengeluaran</h4>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="<?php echo base_url('laporan/pengeluaran') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-12">
+              <div class="small-box bg-gray">
+                <div class="inner">
+                  <h3><?php echo 'Rp.' . number_format($saldo, 0, ',', '.'); ?></h3>
+                  <h4>Saldo</h4>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="<?php echo base_url('laporan/pemasukan') ?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header bg-info">
+                  <h2 class="card-title"><b>Jadwal Berangkat Bus</b></h2>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th style="width: 10px">No</th>
+                        <th>No. Polisi</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Nama Driver</th>
+                        <th>Tujuan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $no = 1;
+                      foreach ($jadwalBerangkat as $data) : ?>
+                        <tr>
+                          <td><?php echo $no++; ?></td>
+                          <td><?php echo $data['no_polisi'] ?></td>
+                          <td><?php echo $data['nama_pemesan'] ?></td>
+                          <td><?php echo $data['nama_driver'] ?></td>
+                          <td><?php echo $data['tempat_tujuan'] ?></td>
+                        </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-lg-12 col-12">
               <!-- card -->
-              <div class="card">
+              <!-- <div class="card">
                 <div class="card-header border-0">
                   <div class="d-flex justify-content-between">
                     <h3 class="card-title">Sales</h3>
@@ -117,7 +192,7 @@
                     </span>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- /.card -->
             </div>
           </div>
