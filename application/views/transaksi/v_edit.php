@@ -116,7 +116,12 @@
                         </div>
                         <div class="form-group">
                             <label for="kernek">Nama Kernek</label>
-                            <input type="text" class="form-control" id="kernek" placeholder="Nama kernek" name="kernek" value="<?php echo $dataTransaksi['nama_kernek'] ?>">
+                            <select type="text" class="form-control" id="kernek" name="kernek">
+                                <option value="<?php echo $dataTransaksi['id_kernek'] ?>"><?php echo $dataTransaksi['nama_kernek'] ?></option>
+                                <?php foreach ($kernek as $d) { ?>
+                                    <option value="<?php echo $d['id_kernek'] ?>"><?php echo $d['nama_kernek'] ?></option>
+                                <?php } ?>
+                            </select>
                             <?= form_error('kernek', '<small class="text-danger">', '</small>') ?>
                         </div>
                         <div class="form-group">

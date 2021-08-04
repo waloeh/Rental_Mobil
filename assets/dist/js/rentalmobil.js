@@ -71,6 +71,42 @@ $(document).ready(function () {
         })
     }
 
+    kernek()
+    function kernek(){
+        $.ajax({
+            url: 'http://localhost/Rental_mobil/kernek/getDataKernekAll',
+            async: false,
+            type: 'post',
+            dataType: 'json',
+            success: function (response) {
+                // console.log(response.data)
+                let html = '';
+                let i;
+                let no = 0;
+                let status;
+                let URL = 'http://localhost/Rental_mobil/Kernek/';
+                for (i = 0; i < response.data.length; i++) {
+                    if (response.data[i].status_driver == 1) {
+                        status = 'Siap';
+                    } else {
+                        status = 'Jalan';
+                    }
+                    no++;
+                    html += '<tr>' +
+                        '<td class="text-center">' + no + '</td>' +
+                        '<td>' + response.data[i].nama_kernek + '</td>' +
+                        '<td>' + response.data[i].alamat_kernek + '</td>' +
+                        '<td>' + response.data[i].jenkel_kernek + '</td>' +
+                        '<td>' + response.data[i].tlp_kernek + '</td>' +
+                        '<td>' + status + '</td>' +
+                        '<td class="text-center">' + '<a href="' + URL + 'Edit/' + response.data[i].id_kernek + '"><button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button></a> <a href="' + URL + 'Detail/' + response.data[i].id_kernek + '"><button type="button" class="btn btn-sm btn-success" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-eye"></button></i></a> <a href="' + URL + 'Hapus/' + response.data[i].id_kernek + '" class="tombol-hapus-kernek"><button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa fa-trash"></i></button></a></td>' +
+                        '<tr>';
+                }
+                $('#show-data-kernek').html(html)
+            }
+        })
+    }
+
     dataUser()
     function dataUser() {
         $.ajax({
@@ -584,6 +620,38 @@ $(document).ready(function () {
         Swal.fire({
             title: 'Apakah anda yakin?',
             text: 'Data Pengeluaran akan dihapus',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus Data!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.location.href = href;
+            }
+        })
+    })
+
+    // sweert alert2 data Kernek
+    //edit
+    dataflash = $('.flash-data-kernek').data('flash')
+    if (dataflash) {
+        Swal.fire(
+            'Data Kernek',
+            'Berhasil ' + dataflash,
+            'success'
+        )
+    }
+    //hapus
+    $('.tombol-hapus-kernek').on('click', function (e) {
+        //matikan aksi default (href tidak akan berjalan)
+        e.preventDefault()
+        //ambil link di href
+        const href = $(this).attr('href')
+
+        Swal.fire({
+            title: 'Apakah anda yakin?',
+            text: 'Data Kerenek akan dihapus',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

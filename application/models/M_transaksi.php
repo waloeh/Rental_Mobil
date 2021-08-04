@@ -8,7 +8,7 @@ class M_transaksi extends CI_Model
 
     public function getTransaksiById($id)
     {
-        $query = "SELECT * FROM `transaksi` INNER JOIN kendaraan ON transaksi.id_kendaraan = kendaraan.id_kendaraan INNER JOIN driver ON transaksi.id_driver = driver.id_driver WHERE transaksi.id_transaksi = $id";
+        $query = "SELECT * FROM `transaksi` INNER JOIN kendaraan ON transaksi.id_kendaraan = kendaraan.id_kendaraan INNER JOIN driver ON transaksi.id_driver = driver.id_driver INNER JOIN kernek ON transaksi.id_kernek = kernek.id_kernek WHERE transaksi.id_transaksi = $id";
         return $this->db->query($query)->row_array();
     }
 

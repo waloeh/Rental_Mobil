@@ -57,6 +57,7 @@ class Transaksi extends CI_Controller
     {
         $data['title'] = 'Transaksi Baru';
         $data['driver'] = $this->M_driver->driverFree();
+        $data['kernek'] = $this->M_driver->kernekFree();
         $data['kendaraan'] = $this->M_kendaraan->kendaraanFree();
         $this->form_validation->set_rules('nama', 'Nama Pelangan', 'required');
         $this->form_validation->set_rules('alamat_pelanggan', 'Alamat Pelangan', 'required');
@@ -119,7 +120,7 @@ class Transaksi extends CI_Controller
                 'komisi_kernek' => trim(htmlspecialchars($this->input->post('komisi_kernek'))),
                 'uang_jalan' => trim(htmlspecialchars($this->input->post('komisi_kernek'))),
                 'id_driver' => $this->input->post('driver'),
-                'nama_kernek' => $this->input->post('kernek'),
+                'id_kernek' => $this->input->post('kernek'),
                 'id_kendaraan' => $this->input->post('kendaraan'),
                 'status' => $status,
                 'id_pelanggan' => $id
@@ -146,6 +147,7 @@ class Transaksi extends CI_Controller
         $data['title'] = 'Edit Data Transaksi';
         $data['dataTransaksi'] = $this->M_transaksi->getTransaksiById($id);
         $data['driver'] = $this->M_driver->driverFree();
+        $data['kernek'] = $this->M_driver->kernekFree();
         $data['kendaraan'] = $this->M_kendaraan->kendaraanFree();
         $this->form_validation->set_rules('nama', 'Nama Pelangan', 'required');
         $this->form_validation->set_rules('alamat_pelanggan', 'Alamat Pelangan', 'required');
@@ -227,7 +229,7 @@ class Transaksi extends CI_Controller
                 'pelunasan' => $pelunasan,
                 'uang_jalan' => trim(htmlspecialchars($this->input->post('uang_jalan'))),
                 'id_driver' => $this->input->post('driver'),
-                'nama_kernek' => $this->input->post('kernek'),
+                'id_kernek' => $this->input->post('kernek'),
                 'id_kendaraan' => $this->input->post('kendaraan'),
                 'status' => $status
                 // 'id_user' => $this->session->user_data('id_user')

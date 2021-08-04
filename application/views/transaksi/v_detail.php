@@ -195,13 +195,17 @@
                                         <th>No. Telpon : </th>
                                         <th><?php echo $dataTransaksi['no_hp'] ?></th>
                                     </tr>
+                                    <tr>
+                                        <th>Nama kernek : </th>
+                                        <th><?php echo $dataTransaksi['nama_kernek'] ?></th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>
                     </div>
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Info Driver</h3>
+                            <h3 class="card-title">Info Pelanggan</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>

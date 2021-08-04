@@ -66,6 +66,7 @@
     $('#data-pengeluaran').DataTable()
     $('#data-jadwal').DataTable()
     $('#data-komisi').DataTable()
+    $('#data-kernek').DataTable()
   })
 </script>
 </body>
